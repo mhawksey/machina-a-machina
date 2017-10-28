@@ -143,10 +143,8 @@ With this formula if cell B3 is blank  it joins the values in A3 and B3 together
 Selecting the cell with the formula (C3) copy it then select the cells C4 to C8 and paste. This should copy the formula into the other parameter rows.
 
 ![Copy cell C3](img/image_3.png)
-*Copy cell C3*
 
 ![Paste into cells C4 to C8 (this can also be achieved with a fill down)](img/image_4.png)
-*Paste into cells C4 to C8 (this can also be achieved with a fill down)*
 
 Your sheet should now look like this:
 
@@ -248,7 +246,6 @@ Some of this will look familiar to the Feeds API we used earlier, in particular,
 >
 > `https://api.flickr.com/services/rest/?method=flickr.test.echo&name=value`
 
-
 So for the flickr.photos.search our API call would include:
 
 `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=...`
@@ -289,7 +286,7 @@ In this exercise we are going to use the Code Beautify XML Viewer [https://codeb
 
 Once the data has loaded it should make it easier for you to see the XPath structure and the  ‘`@`’ attributes. 
 
-![XML Tree View of flickr.photos.search response](img/image_13.png)*XML Tree View of flickr.photos.search response*
+![XML Tree View of flickr.photos.search response](img/image_13.png)
 
 To access this data in Google Sheets we are going to use the `IMPORTXML` formula. This is similar to the `IMPORTFEED` formula but gives more control accessing data. To use `IMPORTXML` we need to provide a url and XPath query. To try this in cell E3 of your spreadsheet enter the formula:
 
@@ -315,10 +312,8 @@ Here we are using `$` the to lock onto the cell B1 so it doesn't change bwhen we
 You can now also select cell E3 and copy/paste it into cells F3 and G3.
 
  ![Copy cell E3](img/image_15.png)
- *Copy cell E3*
 
 ![Paste in cells F3 and G3](img/image_16.png)
-*Paste in cells F3 and G3*
 
 You should now have a spreadsheet that looks like this:
 
