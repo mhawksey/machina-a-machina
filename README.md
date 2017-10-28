@@ -51,28 +51,27 @@ In this exercise we are going to use the Flickr public photos and videos feed AP
 In the documentation the following information is included:
 
 >**Public feed**
+>Returns a list of public content matching some criteria.
 >
-Returns a list of public content matching some criteria.
-
 > **URL** `https://api.flickr.com/services/feeds/photos_public.gne`
-
+>
 >**Query string parameters**
-
+>
 >`id` (Optional) - 
 A single user ID. This specifies a user to fetch for.
-
+>
 >`ids` (Optional) - 
 A comma delimited list of user IDs. This specifies a list of users to fetch for.
-
+>
 >`tags` (Optional) - 
 A comma delimited list of tags to filter the feed by.
-
+>
 >`tagmode` (Optional) - 
 Control whether items must have ALL the tags (tagmode=all), or ANY (tagmode=any) of the tags. Default is ALL.
-
+>
 >`format` (Optional) -
 The format of the feed. See the feeds page for feed format information. Default is Atom 1.0.
-
+>
 >`lang` (Optional) - The display language for the feed. See the feeds page for feed language information. Default is US English (en-us).
 
 The important information you need to use this API is the URL and knowing which parameters you can use with it. Notice that all the parameters are optional - try opening the API url [https://api.flickr.com/services/feeds/photos_public.gne](https://api.flickr.com/services/feeds/photos_public.gne).  You should see data for the last 20 photos uploaded to Flickr. 
@@ -143,9 +142,13 @@ With this formula if cell B3 is blank  it joins the values in A3 and B3 together
 
 Selecting the cell with the formula (C3) copy it then select the cells C4 to C8 and paste. This should copy the formula into the other parameter rows.
 
-![Copy cell C3](img/image_3.png)*Copy cell C3*
+![Copy cell C3](img/image_3.png)
 
-![Paste into cells C4 to C8 (this can also be achieved with a fill down)](img/image_4.png)*Paste into cells C4 to C8 (this can also be achieved with a fill down)*
+*Copy cell C3*
+
+![Paste into cells C4 to C8 (this can also be achieved with a fill down)](img/image_4.png)
+
+*Paste into cells C4 to C8 (this can also be achieved with a fill down)*
 
 Your sheet should now look like this:
 
@@ -215,36 +218,36 @@ In this exercise we will again look at fetching photos with a specific tag and v
 In this exercise we will mostly be using the flickr.photos.search API method which is documented here: [https://www.flickr.com/services/api/flickr.photos.search.html](https://www.flickr.com/services/api/flickr.photos.search.html) and an extract is below:
 
 >**flickr.photos.search**
-
+>
 >Return a list of photos matching some criteria. Only photos visible to the calling user will be returned. To return private or semi-private photos, the caller must be authenticated with 'read' permissions, and have permission to view the photos. Unauthenticated calls will only return public photos.
-
+>
 >**Authentication**
-
+>
 >This method does not require authentication.
-
+>
 >**Arguments**
-
+>
 >`api_key` (Required) - 
 Your API application key. See here for more details.
-
+>
 > `user_id` (Optional) - 
 The NSID of the user who's photo to search. If this parameter isn't passed then everybody's public photos will be searched. A value of "me" will search against the calling user's photos for authenticated calls.
-
+>
 >`tags` (Optional) - 
 A comma-delimited list of tags. Photos with one or more of the tags listed will be returned. You can exclude results that match a term by prepending it with a - character.
-
+>
 >\+ 33 more parameters /...
 
 Some of this will look familiar to the Feeds API we used earlier, in particular, the inclusion of the tags parameter. This time the documentation page doesn’t give a url for our API call for this we have to look at the main [Flickr API documentation](https://www.flickr.com/services/api/) page for information about ‘Request Formats’. Generally the easiest format is REST, which Flickr supports. From the [Flickr REST Request Format page](https://www.flickr.com/services/api/request.rest.html) it states:
 
 >**REST Request Format**
-
+>
 > REST is the simplest request format to use - it's a simple HTTP GET or POST action.
-
+>
 >The REST Endpoint URL is `https://api.flickr.com/services/rest/`
-
+>
 > To request the flickr.test.echo service, invoke like this:
-
+>
 > `https://api.flickr.com/services/rest/?method=flickr.test.echo&name=value`
 
 
@@ -313,9 +316,11 @@ Here we are using `$` the to lock onto the cell B1 so it doesn't change bwhen we
 
 You can now also select cell E3 and copy/paste it into cells F3 and G3.
 
- ![Copy cell E3](img/image_15.png)*Copy cell E3*
+ ![Copy cell E3](img/image_15.png)
+ *Copy cell E3*
 
-![Paste in cells F3 and G3](img/image_16.png)*Paste in cells F3 and G3*
+![Paste in cells F3 and G3](img/image_16.png)
+*Paste in cells F3 and G3*
 
 You should now have a spreadsheet that looks like this:
 
@@ -326,7 +331,7 @@ Experiment with other `tags` values to see what happens to the data in the colum
 To make our timeline we want to refine the call we make to the Flickr API. The documentation lists a number of optional parameters. For this exercise we are interested in the following:
 
 >**per_page** (Optional)
-
+>
 >Number of photos to return per page. If this argument is omitted, it defaults to 100. The maximum allowed value is 500.
 
 The API call defaults to 100 photos but by adding `500` in column B for the row with `per_page` we can get more: 
@@ -334,7 +339,7 @@ The API call defaults to 100 photos but by adding `500` in column B for the row 
 ![per_page set to 500](img/image_18.png)
 
 > **extras** (Optional)
-
+>
 > A comma-delimited list of extra information to fetch for each returned record. Currently supported fields are: `description`, `license`, `date_upload`, `date_taken`, `owner_name`, `icon_server`, `original_format`, `last_update`, `geo`, `tags`, `machine_tags`, `o_dims`, `views`, `media`, `path_alias`, `url_sq`, `url_t`, `url_s`, `url_q`, `url_m`, `url_n`, `url_z`, `url_c`, `url_l`, `url_o`
 
 This API also lets us specify additional data to be included with each item. For the purposes of our timeline let's add `date_taken,owner_name` to column B for the row with `extras`:
@@ -342,7 +347,7 @@ This API also lets us specify additional data to be included with each item. For
 ![extras set to date_taken,owner_name](img/image_19.png)
 
 >**sort** (Optional)
-
+>
 >The order in which to sort returned photos. Defaults to `date-posted-desc` (unless you are doing a radial geo query, in which case the default sorting is by ascending distance from the point specified). The possible values are: `date-posted-asc`, `date-posted-desc`, `date-taken-asc`, `date-taken-desc`, `interestingness-desc`, `interestingness-asc`, and `relevance`.
 
 Flickr has an option to return photos sorted in different orders. For our timeline in column B for the `sort` row add `date-posted-desc` (**Note:** when developing this exercise I tried options for `interestingness-desc` and `relevance` but for working in Google Sheets this doesn’t work as the results change every time to make the API call. As a result as we are using multiple `IMPORTXML` formula the data for each row goes out of sync).
@@ -350,7 +355,7 @@ Flickr has an option to return photos sorted in different orders. For our timeli
 ![sort set to date-posted-desc](img/image_20.png)
 
 >**license** (Optional)
-
+>
 >The license id for photos (for possible values see the flickr.photos.licenses.getInfo method). Multiple licenses may be comma-separated.
 
 The `license` parameter can be used return photos of a particular license like Creative Commons in its different forms. The documentation indicates a `license id` is needed and to get these another API call to the `flickr.photos.licenses.getInfo` method is required. It is not unusual in APIs to have to make other API calls to get data you need. One reason this is done is it lets the service change options and reduce the risk of breaking applications that have been developed, in this case adding additional licences.
@@ -376,7 +381,7 @@ For our timeline lets exclude "All Rights Reserved" photos which are `id="0"`. T
 ![license set to 1,2,3,4,5,6,7,8,9,10](img/image_24.png)
 
 > **place_id** (Optional)
-
+>
 > A Flickr place id. (not used if bbox argument is present). 
 
 We encounter a similar issue for the `place_id` and again we can use the API Explorer for a `flickr.places.find` method to get a `place_id`. The API explorer page for this is: [https://www.flickr.com/services/api/explore/flickr.places.find](https://www.flickr.com/services/api/explore/flickr.places.find) 
