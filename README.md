@@ -6,6 +6,8 @@ This worksheet provides an introduction to APIs. In it we introduction some basi
 
 *This document was developed by Martin Hawksey (@mhawksey) and distributed under a [Creative Commons Attribution 4.0 License](http://creativecommons.org/licenses/by/4.0/) based on content developed by Owen Stephens on behalf of the British Library and also released under CC-BY at [http://www.meanboyfriend.com/overdue_ideas/2014/10/using-an-api-hands-on-exercise/](http://www.meanboyfriend.com/overdue_ideas/2014/10/using-an-api-hands-on-exercise/)*  
 
+Presented at MozFest 2017 - [Available as Google Doc](http://go.alt.ac.uk/doc) 
+
 # What is an API?
 
 An API is essentially an interface that can be used by a computer programme to retrieve or interact with another application. Many popular online services offer such interfaces, like Facebook, Twitter, Flickr and many Google services such as Google Maps and Google Book Search offer APIs which are used by a wide range of services.
