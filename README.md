@@ -143,11 +143,9 @@ With this formula if cell B3 is blank  it joins the values in A3 and B3 together
 Selecting the cell with the formula (C3) copy it then select the cells C4 to C8 and paste. This should copy the formula into the other parameter rows.
 
 ![Copy cell C3](img/image_3.png)
-
 *Copy cell C3*
 
 ![Paste into cells C4 to C8 (this can also be achieved with a fill down)](img/image_4.png)
-
 *Paste into cells C4 to C8 (this can also be achieved with a fill down)*
 
 Your sheet should now look like this:
