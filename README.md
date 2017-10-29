@@ -6,6 +6,22 @@ This worksheet provides an introduction to APIs. In it we introduction some basi
 
 *This document was developed by Martin Hawksey (@mhawksey) and distributed under a [Creative Commons Attribution 4.0 License](http://creativecommons.org/licenses/by/4.0/) based on content developed by Owen Stephens on behalf of the British Library and also released under CC-BY at [http://www.meanboyfriend.com/overdue_ideas/2014/10/using-an-api-hands-on-exercise/](http://www.meanboyfriend.com/overdue_ideas/2014/10/using-an-api-hands-on-exercise/)*  
 
+**Table of Contents**
+
+- [Introduction](#)
+- [What is an API?](#)
+- [Using APIs](#)
+- [Exercise 1: Using the Flickr Feeds API](#)
+	- [Using the Flickr Public Feed API](#)
+	- [Limitations of IMPORTFEED](#)
+	- [Exploring other Flickr Feeds API options](#)
+- [Exercise 2: Using the main Flickr API to make a Mozfest photo timeline](#)
+	- [API Access/Authentication](#)
+	- [Using the flickr.photos.search API](#)
+	- [Adding a bit of TimelineJS magic](#)
+- [Summary](#)
+- [Useful Links](#)
+
 # What is an API?
 
 An API is essentially an interface that can be used by a computer programme to retrieve or interact with another application. Many popular online services offer such interfaces, like Facebook, Twitter, Flickr and many Google services such as Google Maps and Google Book Search offer APIs which are used by a wide range of services.
