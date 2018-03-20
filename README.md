@@ -97,7 +97,7 @@ The first thing to do is use the sheet cells to build the API call (the query yo
 <table>
   <tr>
     <td><b>URL</b></td>
-    <td><code>https://api.flickr.com/services/feeds/photos_public.gneM</code></td>
+    <td><code>https://api.flickr.com/services/feeds/photos_public.gne</code></td>
   </tr>
   <tr>
     <td><b>id</b></td>
